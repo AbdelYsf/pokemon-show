@@ -6,13 +6,13 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1tujc56-MuiPaper-root-MuiCard-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-grc18p-MuiPaper-root-MuiCard-root"
       >
         <img
           alt="Pikachu"
           class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-t7s8y2-MuiCardMedia-root"
           height="260"
-          src="url"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
         />
         <div
           class="MuiCardActions-root MuiCardActions-spacing css-72hqeq-MuiCardActions-root"
@@ -53,13 +53,13 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1tujc56-MuiPaper-root-MuiCard-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-grc18p-MuiPaper-root-MuiCard-root"
     >
       <img
         alt="Pikachu"
         class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-t7s8y2-MuiCardMedia-root"
         height="260"
-        src="url"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
       />
       <div
         class="MuiCardActions-root MuiCardActions-spacing css-72hqeq-MuiCardActions-root"

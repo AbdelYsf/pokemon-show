@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardActions,
-  CardMedia,
-  styled,
-  Typography,
-} from "@mui/material";
+import {Card, CardActions, CardMedia, styled, Typography,} from "@mui/material";
 
 export const StyledCardActions = styled(CardActions)`
   display: flex;
@@ -15,7 +9,7 @@ export const StyledCardActions = styled(CardActions)`
 export const StyledCard = styled(Card)`
   background-color: #faebec;
   margin: 20px;
-  max-width: 260px;
+  width: 260px;
   border-radius: 25px;
 
   :hover {
