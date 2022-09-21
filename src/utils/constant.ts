@@ -6,3 +6,4 @@ export const URL_ID = `{ID}`;
 
 export const OFFICIAL_ARTWORK = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${URL_ID}.png`
 
+export const MAX_STATS_VALUE = 255;

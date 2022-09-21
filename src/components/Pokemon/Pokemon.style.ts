@@ -28,4 +28,5 @@ export const StyledCardMedia = styled(CardMedia)`
 export const StyledTypography = styled(Typography)`
   display: flex;
   justify-content: center;
+  text-transform: capitalize;
 ` as typeof Typography;

@@ -1,12 +1,26 @@
 import {Box, CircularProgress, Grid} from "@mui/material";
 import Pokemon from "../../components/Pokemon";
-import {usePokemon} from "../../hooks/usePokemon";
+import {usePokemons} from "../../hooks/usePokemons";
 import {useInView} from "react-intersection-observer";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import PokemonDetails from "../../components/PokemonDetails";
+import {useDispatch} from "react-redux";
+import {getPokemonDetails} from "../../state/slices/pokemonDetails/slice";
+import PokemonDetailsLoader from "../../components/shared/PokemonDetailsLoader";
 
 const Pokemonpage = () => {
-    const apiResponse = usePokemon();
+    const apiResponse = usePokemons();
     const {ref, inView} = useInView()
+    const [open, setOpen] = useState(false);
+    const dispatch = useDispatch();
+    const handleClickOpen = (name: string) => {
+        dispatch(getPokemonDetails(name));
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     useEffect(() => {
         if (inView) {
             apiResponse.fetchNextPage()
@@ -20,14 +34,17 @@ const Pokemonpage = () => {
                     <Pokemon
                         name={ele.name}
                         url={ele.url}
+                        openDetails={() => {
+                            handleClickOpen(ele.name)
+                        }}
                     />
                 </Grid>
             );
         });
     });
     return (
-        <Box sx={{overflow: "auto"}}>
-            <Grid container justifyContent="center" gap="15px">
+        <Box sx={{overflow: "none"}}>
+            <Grid container justifyContent="center" gap="15px" data-cy="pokemon-page">
                 {apiResponse.isLoading ? (
                     <CircularProgress/>
                 ) : apiResponse.error ? (
@@ -38,8 +55,9 @@ const Pokemonpage = () => {
                 )}
             </Grid>
             {
-                apiResponse.hasNextPage && <div ref={ref}/>
+                apiResponse.hasNextPage && <PokemonDetailsLoader ref={ref}/>
             }
+            <PokemonDetails url="test" closeModal={handleClose} isOpen={open}></PokemonDetails>
 
         </Box>
     );

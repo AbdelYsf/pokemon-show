@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.4",
     "@reduxjs/toolkit": "^1.8.5",
     "@tanstack/react-query": "^4.3.4",
@@ -20,6 +21,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.0",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
@@ -32,7 +34,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "plop": "plop"
+    "plop": "plop",
+    "e2e": "cypress run",
+    "cypress": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^10.8.0",
     "plop": "^3.1.1"
   }
 }

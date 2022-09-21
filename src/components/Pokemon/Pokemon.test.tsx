@@ -8,9 +8,10 @@ describe("Pokemon", () => {
     // fixtures
     const pokemonName = "Pikachu";
     const url = "//https://pokeapi.co/api/v2/pokemon/2/";
+    const mockedHandleOpen = jest.fn();
 
     test("should render Pokemon", () => {
-        render(<Pokemon name={pokemonName} url={url}/>);
+        render(<Pokemon name={pokemonName} url={url} openDetails={mockedHandleOpen}/>);
         expect(screen.getByText(pokemonName)).toBeInTheDocument();
         expect(screen.getByRole("button")).toBeInTheDocument();
         const images = screen.getAllByRole("img");
@@ -20,16 +21,17 @@ describe("Pokemon", () => {
         expect(images[1]).toHaveAttribute("src", POKEMON_BALL_ICON_URL);
     });
 
-    test("renders the modal of pokemon details", async () => {
+    test("should call open details", async () => {
         const user = userEvent.setup()
-        render(<Pokemon name={pokemonName} url={url}/>);
+        render(<Pokemon name={pokemonName} url={url} openDetails={mockedHandleOpen}/>);
         const button = screen.getByRole("button");
         await user.click(button);
-        // TODO: add assertions
+        expect(mockedHandleOpen).toHaveBeenCalledTimes(1);
+
     });
 
     test("should match snapshot", async () => {
-        const container = render(<Pokemon name={pokemonName} url={url}/>);
+        const container = render(<Pokemon name={pokemonName} url={url} openDetails={mockedHandleOpen}/>);
         expect(container).toMatchSnapshot()
     });
 });

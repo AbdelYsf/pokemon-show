@@ -3,7 +3,7 @@ import {PokemonAPiResponse} from "../types";
 import {POKEMON_API_ROOT_URL} from "../utils/constant";
 import {useInfiniteQuery} from "@tanstack/react-query";
 
-export const usePokemon = () => {
+export const usePokemons = () => {
     const apiResponse = useInfiniteQuery<PokemonAPiResponse>(
         ["pokemons"],
         async ({pageParam = `${POKEMON_API_ROOT_URL}/pokemon?limit=20&offset=0`}) => {
@@ -15,7 +15,6 @@ export const usePokemon = () => {
         },
         {
             getNextPageParam: (lastPage) => {
-                console.log(lastPage.next)
                 return lastPage.next;
             },
         }

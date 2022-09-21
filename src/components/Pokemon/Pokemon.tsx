@@ -1,17 +1,17 @@
 import {Avatar, Button} from "@mui/material";
-import {PokemonResult} from "../../types";
+import {PokemonProps} from "../../types";
 import {StyledCard, StyledCardActions, StyledCardMedia, StyledTypography,} from "./Pokemon.style";
 import {OFFICIAL_ARTWORK, POKEMON_BALL_ICON_URL, URL_ID} from "../../utils/constant";
 import React from "react";
 import {getPokemonIdFromUrl} from "../../utils";
 
-const Pokemon = React.forwardRef((props: PokemonResult) => {
-
+const Pokemon = ((props: PokemonProps) => {
 
     const imageUrl = OFFICIAL_ARTWORK.replace(URL_ID, getPokemonIdFromUrl(props.url) + "")
     return (
-        <StyledCard>
+        <StyledCard data-cy="pokemon-card">
             <StyledCardMedia
+                data-cy="pokemon-image"
                 component="img"
                 height="260"
                 image={imageUrl}
@@ -22,6 +22,7 @@ const Pokemon = React.forwardRef((props: PokemonResult) => {
             />
             <StyledCardActions>
                 <StyledTypography
+                    data-cy="pokemon-name"
                     gutterBottom
                     variant="h4"
                     component="div"
@@ -32,8 +33,10 @@ const Pokemon = React.forwardRef((props: PokemonResult) => {
             </StyledCardActions>
             <StyledCardActions>
                 <Button
+                    data-cy="open-pokemon-details"
                     size="large"
                     startIcon={<Avatar src={POKEMON_BALL_ICON_URL}></Avatar>}
+                    onClick={props.openDetails}
                 ></Button>
             </StyledCardActions>
         </StyledCard>
