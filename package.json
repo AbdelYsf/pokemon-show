@@ -2,6 +2,7 @@
   "name": "imedia24-challenge-front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://abdelysf.github.io/pokemons",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
