@@ -25,7 +25,7 @@ const Pokemonpage = () => {
         if (inView) {
             apiResponse.fetchNextPage()
         }
-    }, [inView])
+    }, [inView, apiResponse])
     const content = apiResponse?.data?.pages.map((page: any) => {
         return page.results.map((ele: any, index: number) => {
             return (
