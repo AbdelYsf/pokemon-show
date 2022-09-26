@@ -2,5 +2,5 @@
 
 ## Run the app locally
 
-* ### `yarn start`
-* go to `http://localhost:3000/pokemons`
+* #### run `yarn start`
+* go to `http://localhost:3000`
